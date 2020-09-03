@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    Delete Address
+{% endblock title %}
+{% block content %}
+    <div class="container">
+        <h1 class="display-1">Delete Address</h1>
+        <hr>
+
+        <form method="post">
+            {% csrf_token %}
+            <h6> Are you sure you want to delete this address?</h6>
+            <input type="submit" value="Delete Address" class="btn btn-danger">
+        </form>
+    </div>
+{% endblock content %}

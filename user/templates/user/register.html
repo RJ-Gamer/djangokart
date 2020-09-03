@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block title %} Register {% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1 class="display-1">Create Account</h1>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+
+        <!-- First Name and Last Name -->
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <h5><label for="first_name">{{ form.first_name.label_tag}}</label></h5>
+                    <input
+                    type="text"
+                    name="first_name"
+                    id="first_name"
+                    class="form-control {% if form.first_name.errors %} is-invalid {% endif %} form_input">
+                    {% if form.first_name.errors %}
+                    <div class="invalid-feedback">
+                        {{ form.first_name.errors }}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <div class="form-group">
+                        <h5><label for="last_name">{{ form.last_name.label_tag}}</label></h5>
+                        <input
+                        type="text"
+                        name="last_name"
+                        id="last_name"
+                        class="form-control {% if form.last_name.errors %} is-invalid {% endif %} form_input">
+                        {% if form.last_name.errors %}
+                        <div class="invalid-feedback">
+                            {{ form.last_name.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- First name and Last name ended -->
+
+        <!-- Email and Role -->
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <h5><label for="email">{{ form.email.label_tag}}</label></h5>
+                    <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="form-control {% if form.email.errors %} is-invalid {% endif %} form_input">
+                    {% if form.email.errors %}
+                    <div class="invalid-feedback">
+                        {{ form.email.errors }}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <h5><label for="role">{{ user_role_form.role.label_tag}}</label></h5>
+                    <select name="role" id="role" class="form-control form_input">
+                        <option value="Customer">Customer</option>
+                        <option value="Vendor">Vendor</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- Email and role ended -->
+
+        <!-- Passwords -->
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <h5><label for="password">{{ form.password.label_tag}}</label></h5>
+                    <input type="password" name="password" id="password"
+                    class="form-control {% if form.password.errors %} is-invalid {% endif %} form_input">
+                    {% if form.password.errors %}
+                    <div class="invalid-feedback">
+                        {{ form.password.errors }}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5><label for="password2">{{ form.password2.label_tag}}</label></h5>
+                    <input type="password" name="password2" id="password2"
+                    class="form-control {% if form.password2.errors %} is-invalid {% endif %} form_input">
+                    {% if form.password2.errors %}
+                    <div class="invalid-feedback">
+                        {{ form.password2.errors }}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <!-- End of passwords -->
+        <input type="submit" value="Create Account" class="btn btn-dark">
+    </form>
+    <div class="table text-center">
+        <td>Already have an account? <a href="{% url 'user:login' %}" class="navlink">Login Here</a></td>
+    </div>
+</div>
+{% endblock content %}

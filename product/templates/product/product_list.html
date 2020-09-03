@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+    Products
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="display-1">Products</h1>
+        <hr>
+
+        <table class="table">
+            <tr>
+                <th></th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Buy Now</th>
+                <th>Add to Cart</th>
+            </tr>
+            {% for product in products %}
+            <tr>
+                <td><a href="{% url 'product:product_detail' product.id %}">{{ product.id }}</a></td>
+                <td><a href="{% url 'product:product_detail' product.id %}">{{ product.name }}</a></td>
+                <td>{{ product.price }}</td>
+                <td><a href="{% url 'kart:basket' %}" class="btn btn-success">Buy Now</a></td>
+                <td><a href="{% url 'kart:add_to_basket' %}?product_id={{ product.id }}" class="btn btn-primary">Add to Cart</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock content %}

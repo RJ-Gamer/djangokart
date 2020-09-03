@@ -1,0 +1,13 @@
+2020-09-02 12:09:37,435 - INFO - models - Creating order for basket_id: 3, Shipping address: 3, billing address: 1
+2020-09-02 12:16:46,875 - INFO - models - Creating order for basket_id: 3, Shipping address: 3, billing address: 1
+2020-09-02 12:21:10,918 - INFO - models - Creating order for basket_id: 3, Shipping address: 3, billing address: 1
+2020-09-02 12:21:11,261 - INFO - models - Created order with id: 2 and lines count: 0
+2020-09-02 12:22:43,080 - INFO - views - New account created by Sanket Jog with email:sanket@test.com as Customer
+2020-09-02 12:24:26,111 - INFO - models - Creating order for basket_id: 4, Shipping address: 4, billing address: 4
+2020-09-02 12:24:26,428 - INFO - models - Created order with id: 3 and lines count: 0
+2020-09-02 14:19:17,950 - INFO - views - New account created by Sanket jog with email:andy@gmail.com as Customer
+2020-09-02 14:21:21,291 - INFO - models - Creating order for basket_id: 5, Shipping address: 5, billing address: 5
+2020-09-02 14:21:21,663 - INFO - models - Created order with id: 4 and lines count: 0
+2020-09-03 10:32:36,475 - INFO - views - New account created by Vanita Jog with email:vanita@gmail.com as Vendor
+2020-09-03 10:43:56,558 - INFO - views - New account created by Neha Danane with email:neha1@test.com as Customer
+2020-09-03 11:26:21,442 - INFO - views - New account created by Rajat Jog with email:rajat@test.com as Vendor

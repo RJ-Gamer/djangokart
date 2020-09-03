@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+    Address List
+{% endblock title %}
+{% block content %}
+    <div class="container">
+        <h1 class="display-4">List of addresses </h1>
+        <hr>
+
+        {% for address in object_list %}
+            <h6>
+                {{ address.name }} <br>
+                {{ address.address1 }} <br>
+                {{ address.address2 }} <br>
+                {{ address.zip_code }} <br>
+                {{ address.city }} <br>
+                {{ address.state }} <br>
+                {{ address.country }}
+            </h6>
+
+            <h6><a href="{% url 'address:address_update' address.id %}" class="btn btn-primary">Update Address</a></h6>
+            <h6><a href="{% url 'address:address_delete' address.id %}" class="btn btn-danger">Delete Address</a></h6>
+
+            {% if not forloop.last %}
+                <hr>
+            {% endif %}
+        {% endfor %}
+        <h6><a class="btn btn-success" href="{% url 'address:address_create' %}"> Add new Address</a></h6>
+    </div>
+{% endblock content %}

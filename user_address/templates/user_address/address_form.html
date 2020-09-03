@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    Create New Address
+{% endblock title %}
+{% block content %}
+    <div class="container">
+        <h1 class="display-1">Add new Address</h1>
+        <hr>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Add Address" class="btn btn-primary">
+        </form>
+    </div>
+{% endblock content %}
