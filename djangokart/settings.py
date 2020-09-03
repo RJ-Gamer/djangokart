@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'yet_oldzfnz!s&hux8z0ri$#44%l&24093(d7-+_o0#(zgc6!='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['djangokart.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
